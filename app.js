@@ -1,6 +1,9 @@
 const timeline = document.getElementById("timeline");
 const count = document.getElementById("entry-count");
 const template = document.getElementById("day-template");
+const newsTimeline = document.getElementById("news-timeline");
+const newsCount = document.getElementById("news-count");
+const newsTemplate = document.getElementById("news-template");
 
 const emptyIllustration = String.raw`
       .-''''-.
@@ -27,6 +30,8 @@ if (window.DIARY_SOURCE) {
     </section>
   `;
 }
+
+renderTelegramNews(window.TELEGRAM_NEWS);
 
 function renderDiary(markdown) {
   const days = parseDiary(markdown);
@@ -64,6 +69,44 @@ function renderDiary(markdown) {
     }
 
     timeline.appendChild(node);
+  });
+}
+
+function renderTelegramNews(feed) {
+  const items = feed?.items ?? [];
+
+  newsCount.textContent = `${items.length} referencia${items.length === 1 ? "" : "s"}`;
+
+  if (!items.length) {
+    newsTimeline.innerHTML = `
+      <section class="empty-state">
+        <p>Todavia no hay noticias referenciadas desde AdmiraNext.</p>
+      </section>
+    `;
+    return;
+  }
+
+  newsTimeline.innerHTML = "";
+
+  items.forEach((item, index) => {
+    const node = newsTemplate.content.cloneNode(true);
+    node.querySelector(".day-title").textContent = item.title;
+    node.querySelector(".day-chip").textContent = `#${index + 1}`;
+
+    const list = node.querySelector(".entry-list");
+    const published = document.createElement("li");
+    published.textContent = `Publicado: ${formatTimestamp(item.published_at)}`;
+    list.appendChild(published);
+
+    const body = document.createElement("li");
+    body.textContent = item.body;
+    list.appendChild(body);
+
+    const link = document.createElement("li");
+    link.innerHTML = `<a class="hero-link" href="${item.url}" target="_blank" rel="noreferrer">Abrir referencia en Telegram</a>`;
+    list.appendChild(link);
+
+    newsTimeline.appendChild(node);
   });
 }
 
@@ -106,4 +149,15 @@ function formatDate(value) {
     month: "long",
     year: "numeric"
   }).format(date);
+}
+
+function formatTimestamp(value) {
+  if (!value) {
+    return "sin fecha";
+  }
+
+  return new Intl.DateTimeFormat("es-ES", {
+    dateStyle: "medium",
+    timeStyle: "short"
+  }).format(new Date(value));
 }

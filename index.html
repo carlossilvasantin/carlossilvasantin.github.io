@@ -48,6 +48,18 @@
 
       <div id="timeline" class="timeline" aria-live="polite"></div>
     </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">AdmiraNext</p>
+          <h2>Noticias referenciadas</h2>
+        </div>
+        <span id="news-count" class="count-pill">0 referencias</span>
+      </div>
+
+      <div id="news-timeline" class="timeline" aria-live="polite"></div>
+    </section>
   </main>
 
   <template id="day-template">
@@ -63,7 +75,21 @@
     </article>
   </template>
 
+  <template id="news-template">
+    <article class="day-card">
+      <header class="day-head">
+        <div>
+          <p class="day-label">Referencia</p>
+          <h3 class="day-title"></h3>
+        </div>
+        <span class="day-chip"></span>
+      </header>
+      <ul class="entry-list"></ul>
+    </article>
+  </template>
+
   <script src="data.js"></script>
+  <script src="telegram-news.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
