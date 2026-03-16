@@ -8,7 +8,6 @@ Si no hay actividad relevante, tambien se registrara el dia.
 
 ## 2026-03-16
 
-Hoy hemos dejado iniciada la bitacora del proyecto y fijado la regla de mantener entradas breves y genericas.
-Hemos preparado una pagina web nueva, Bitacora de abordo, para mostrar el diario de forma visual dentro del proyecto.
-Tambien hemos dejado lista la sincronizacion entre diario.md y la web para poder mantenerla actualizada con facilidad.
+Hoy hemos dejado iniciada la bitacora del proyecto, fijado la regla de mantener entradas breves y genericas, y preparado una web para mostrar el diario de forma visual.
+Tambien hemos dejado publicadas dos versiones del site: una clasica para bitacora-de-abordo y otra futurista estilo Matrix en la raiz publica de GitHub Pages.
 `;
