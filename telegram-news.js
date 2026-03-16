@@ -1,6 +1,15 @@
 window.TELEGRAM_NEWS = {
-  "channel": "admiraNext",
+  "channel": "admiranext",
   "items": [
+    {
+      "id": "7",
+      "channel": "admiranext",
+      "url": "https://t.me/admiranext/7",
+      "published_at": "2026-03-16T13:09:27.023Z",
+      "views": "",
+      "title": "prueba canal 1",
+      "body": "prueba canal 1"
+    },
     {
       "id": "6",
       "channel": "admiraNext",
