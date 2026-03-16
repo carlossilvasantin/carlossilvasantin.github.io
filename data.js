@@ -8,7 +8,7 @@ Si no hay actividad relevante, tambien se registrara el dia.
 
 ## 2026-03-16
 
-1. Hoy hemos dejado iniciada la bitacora del proyecto, fijado la regla de mantener entradas breves y genericas, y preparado una web para mostrar el diario de forma visual.
+1. Hemos preparado la base para publicar mensajes en Telegram con el bot del proyecto usando token y destino configurables.
 2. Tambien hemos dejado publicadas dos versiones del site: una clasica para bitacora-de-abordo y otra futurista estilo Matrix en la raiz publica de GitHub Pages.
 3. Hemos empezado la base para leer un canal publico de Telegram y convertir sus mensajes en noticias reutilizables para publicar.
 `;
