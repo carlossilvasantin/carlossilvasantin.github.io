@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitacora de abordo | Matrix Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="backdrop"></div>
+  <div class="rain rain-a" aria-hidden="true"></div>
+  <div class="rain rain-b" aria-hidden="true"></div>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Terminal de navegacion</p>
+      <h1>Bitacora de abordo</h1>
+      <p class="lede">
+        Un registro de mision en clave cyberpunk.
+        La bitacora muestra las entradas del diario como si estuvieran emergiendo desde una consola de vigilancia nocturna.
+      </p>
+      <div class="hero-meta">
+        <div>
+          <span class="meta-label">Origen</span>
+          <strong>diario.md</strong>
+        </div>
+        <div>
+          <span class="meta-label">Protocolo</span>
+          <strong>maximo 3 entradas por dia</strong>
+        </div>
+        <div>
+          <span class="meta-label">Edicion clasica</span>
+          <strong><a class="hero-link" href="https://carlossilvasantin.github.io/bitacora-de-abordo/">abrir version actual</a></strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Secuencia activa</p>
+          <h2>Registro de operaciones</h2>
+        </div>
+        <span id="entry-count" class="count-pill">0 entradas</span>
+      </div>
+
+      <div id="timeline" class="timeline" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <template id="day-template">
+    <article class="day-card">
+      <header class="day-head">
+        <div>
+          <p class="day-label">Ciclo</p>
+          <h3 class="day-title"></h3>
+        </div>
+        <span class="day-chip"></span>
+      </header>
+      <ul class="entry-list"></ul>
+    </article>
+  </template>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
